@@ -8,34 +8,6 @@ const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 
-/*
-  // Ideas
-  Ability to edit a workout;
-
-  Ability to delete a workout;
-
-  Ability to delete all workouts;
-
-  Ability to maker and it pans/centers it to that maker;
-
-  Refactor to USA: using Internationalizing API 
-
-  Ability to sort workouts by a certain field(e.g distance)
-
-  Re-build Running and Cycling objects coming from LocalStorage;
-
-  More realistic error and confirmation messages;
-
-  Ability to position the map to show all workouts [very hard];
-
-  Ability to draw lines and shapes instead of just points [very hard];
-
-  Geocode location from coordinates ('Run in Faro, Portugal') [only after async JavaScript section];
-
-  Display weather data for workout time and place [only after async JavaScript section];
-
-*/
-
 class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);
@@ -204,9 +176,6 @@ class App {
       const cadence = +inputCadence.value;
       // Check if data is valid
       if (
-        // !Number.isFinite(distance) ||
-        // !Number.isFinite(duration) ||
-        // !Number.isFinite(cadence)
         !validInputs(distance, duration, cadence) ||
         !allPostive(distance, duration, cadence)
       )
@@ -220,9 +189,6 @@ class App {
       const elevation = +inputElevation.value;
 
       if (
-        // !Number.isFinite(distance) ||
-        // !Number.isFinite(duration) ||
-        // !Number.isFinite(cadence)
         !validInputs(distance, duration, elevation) ||
         !allPostive(distance, duration)
       )
@@ -361,3 +327,31 @@ class App {
 }
 
 const app = new App();
+
+/*
+  // Ideas
+  Ability to edit a workout;
+
+  Ability to delete a workout;
+
+  Ability to delete all workouts;
+
+  Ability to marker and it pans/centers it to that marker;
+
+  Refactor to USA: using Internationalizing API 
+
+  Ability to sort workouts by a certain field(e.g distance)
+
+  Re-build Running and Cycling objects coming from LocalStorage;
+
+  More realistic error and confirmation messages;
+
+  Ability to position the map to show all workouts [very hard];
+
+  Ability to draw lines and shapes instead of just points [very hard];
+
+  Geocode location from coordinates ('Run in Faro, Portugal') [only after async JavaScript section];
+
+  Display weather data for workout time and place [only after async JavaScript section];
+
+*/
